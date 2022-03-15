@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "baseConfig": [
+    {
+      "execution_type": "realDevice",
+      "configurations": {
+        "noReset": "true",
+        "automationName": "XCUITEST",
+        "showXodelog": "true",
+        "agentPath": "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj",
+        "bootstrapPath": "/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-webdriveragent",
+        "derivedDataPath": "/Users/kapilchawla/Library/Developer/Xcode/DerivedData/WebDriverAgent-ciegwgvxzxdrqthilmrmczmqvrgu"
+      }
+    }
+  ],
+  "mobile_configurations": [
+    {
+      "platformType": "app",
+      "configurations": [
+        {
+          "configName": "R_APP_iPhoneXs",
+          "execution_type": "realDevice",
+          "capabilities": {
+            "deviceName": "iPhoneXs",
+            "udid": "00008020-000674212205002E",
+            "platformName": "iOS",
+            "platformVersion": "13.5",
+            "app": "/Users/kapilchawla/Documents/XebiaProjects/IDFC/IDFCMobile.ipa",
+            "appPackage": "com.idfcbank.mobileBanking",
+            "appActivity": ""
+          }
+        }
+      ]
+    },
+    {
+      "platformType": "browser",
+      "configurations": [
+        {
+          "configName": "R_iPhoneXs",
+          "execution_type": "realDevice",
+          "capabilities": {
+            "deviceName": "iPhone XS",
+            "udid": "00008020-000674212205002E",
+            "platformName": "iOS",
+            "platformVersion": "13.5",
+            "app": "",
+            "browserName": "$browser"
+          }
+        }
+      ]
+    }
+  ]
+}

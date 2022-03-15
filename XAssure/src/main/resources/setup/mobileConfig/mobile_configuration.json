@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "appium_Capabilities": {
+    "noReset": "false",
+    "appiumCmdTimeOut": 2000,
+    "appiumJsPath": "/usr/local/lib/node_modules/appium/build/lib/main.js",
+    "androidHome": "/Users/kapilchawla/Library/Android/sdk"
+  },
+  "Configuration": [
+    {
+      "platformType": "ios",
+      "$ref": "./iosConfig.json"
+    },
+    {
+      "platformType": "android",
+      "$ref": "./androidConfig.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="test" parallel="methods" data-provider-thread-count="3">
+    <test name="DP Test">
+        <classes>
+            <class name="dataproviderTesting.DataProviderIntegrationExample">
+                <methods>
+                    <include name="integrationTest">
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

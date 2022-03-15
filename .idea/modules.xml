@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/XAssureBackend-master.iml" filepath="$PROJECT_DIR$/.idea/XAssureBackend-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XAssure/XAssureFW.iml" filepath="$PROJECT_DIR$/XAssure/XAssureFW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XassureReporting/XassureReporting.iml" filepath="$PROJECT_DIR$/XassureReporting/XassureReporting.iml" />
+    </modules>
+  </component>
+</project>

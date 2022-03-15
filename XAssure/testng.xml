@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="test" thread-count="2" parallel="tests">
+    <test enabled="true" name="test" preserve-order="true">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="test.injection.TestClass">
+                <methods>
+                    <include name="firstTest">
+
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test enabled="true" name="test 2" preserve-order="true">
+        <parameter name="platform" value="web"/>
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="test.injection.GalenTest">
+                <methods>
+                    <include name="SampleUiTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test enabled="true" name="db Test" preserve-order="true">
+        <parameter name="platform" value="api"/>
+        <parameter name="browser" value=""/>
+        <classes>
+            <class name="test.injection.TestClass">
+                <methods>
+                    <include name="thirdTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
