@@ -88,7 +88,7 @@ public class EmailReport {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM-dd");
         LocalDateTime now = LocalDateTime.now();
 
-          /* 15032021-added browser in the status for levi*/
+        /* 15032021-added browser in the status for levi*/
         message.setSubject("Automation Execution Report - " + System.getProperty("environment") + " " + dtf.format(now));
 
 
@@ -218,22 +218,17 @@ public class EmailReport {
 
                 String isOrder = System.getProperty("IS_ORDER");
                 if (isOrder != null && isOrder.equalsIgnoreCase("true")) {
-//                    BodyPart messageBodyPart;
-//                    // Part two is attachment
-//                    messageBodyPart = new MimeBodyPart();
-//                    String filename = "src/test/resources/testdata/app/orderCompletion/OrderDetails.xlsx";
-//                    DataSource source = new FileDataSource(filename);
-//                    messageBodyPart.setDataHandler(new DataHandler(source));
-//                    messageBodyPart.setFileName(new File(filename).getName());
-
                     MimeBodyPart attachPart = new MimeBodyPart();
                     String attachFile = "src/test/resources/testdata/app/orderCompletion/OrderDetails.xlsx";
                     attachPart.attachFile(attachFile);
-
                     multipart.addBodyPart(attachPart);
                 }
-
-
+//email attachment-START
+                MimeBodyPart attachPart = new MimeBodyPart();
+                String attachFile = "reports/"+Reporting.getRunId()+"/DetailedReport.csv";
+                attachPart.attachFile(attachFile);
+                multipart.addBodyPart(attachPart);
+//email attachment-END
                 Transport.send(message);
                 System.out.println("Email Sent");
             }
@@ -302,7 +297,7 @@ public class EmailReport {
             htmlReport.append("</style>");
             htmlReport.append("</head>");
             htmlReport.append("<body text='#00126A'>");
-           // htmlReport.append("Dear " + getUserName() + ",");
+            // htmlReport.append("Dear " + getUserName() + ",");
             htmlReport.append("<br/><br/>");
             htmlReport.append("Greetings !");
             htmlReport.append("<br/><br/>");
@@ -341,7 +336,7 @@ public class EmailReport {
 
             htmlReport.append("<td class='brand name'>" + System.getProperty("app") + "</td>");
             htmlReport.append("<td class='executionEnv'>" + System.getProperty("environment") + "</td>");
-            htmlReport.append("<td class='suite'>" +System.getProperty("testConfig") + "</td>");
+            htmlReport.append("<td class='suite'>" + System.getProperty("testConfig") + "</td>");
             htmlReport.append("<td class='date'>" + getCurrentDate() + "</td>");
             htmlReport.append("<td class='timeTakenInExecution'>" + Reporting.getExecutionTime() + "</td>");
             htmlReport.append("<td class='timezone'>PDT</td>");
@@ -491,6 +486,7 @@ public class EmailReport {
             htmlReport.append("</tbody>");
             htmlReport.append("</table>");
             htmlReport.append("<br/>");
+
             String dynamicBrTags = getBrHtmlTags();
             htmlReport.append(dynamicBrTags);
             htmlReport.append("Regards,");
